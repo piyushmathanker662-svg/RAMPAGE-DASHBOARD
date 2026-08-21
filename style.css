@@ -1040,3 +1040,22 @@ body {
         padding: 12px;
     }
 }
+.status-active {
+    color: #8cff00 !important;
+}
+
+.status-inactive {
+    color: #ffb000 !important;
+}
+
+.status-closed {
+    color: #ff3333 !important;
+}
+
+.performance b.average {
+    color: #ffb000 !important;
+}
+
+.performance b.poor {
+    color: #ff3333 !important;
+}
