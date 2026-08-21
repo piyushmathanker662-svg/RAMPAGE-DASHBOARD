@@ -1,98 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #8cff00;
+    --green-light: #b5ff55;
+    --black: #000000;
+    --dark: #050805;
+    --card: #0a0e08;
+    --white: #ffffff;
+    --gray: #777777;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+
 /* =========================
-   GAME SELECTION
+   INTRO
+========================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+
+    animation: introHide 0.8s ease forwards;
+    animation-delay: 3s;
+}
+
+.logo-container {
+    text-align: center;
+
+    animation: introLogo 3s ease forwards;
+}
+
+.logo-container img {
+    width: 360px;
+    max-width: 70vw;
+
+    filter:
+        drop-shadow(0 0 15px rgba(140,255,0,.8))
+        drop-shadow(0 0 45px rgba(140,255,0,.3));
+}
+
+.logo-container h1 {
+    margin-top: 20px;
+
+    font-size: 38px;
+
+    letter-spacing: 9px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 12px rgba(140,255,0,.8),
+        0 0 35px rgba(140,255,0,.3);
+}
+
+@keyframes introLogo {
+
+    0% {
+        transform: scale(.35);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes introHide {
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+#login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(100,180,0,.18),
+            transparent 40%
+        ),
+        #000;
+}
+
+.login-box {
+
+    width: 420px;
+    max-width: 90%;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,20,12,.97),
+            rgba(2,2,2,.98)
+        );
+
+    border: 1px solid rgba(140,255,0,.45);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 45px rgba(140,255,0,.1),
+        inset 0 0 40px rgba(140,255,0,.03);
+}
+
+.login-logo img {
+
+    width: 75px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(0 0 12px rgba(140,255,0,.6));
+}
+
+.login-box h2 {
+
+    color: var(--green);
+
+    font-size: 27px;
+
+    letter-spacing: 5px;
+}
+
+.login-box p {
+
+    margin-top: 8px;
+
+    margin-bottom: 32px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.login-box input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background: #050505;
+
+    border: 1px solid #292929;
+
+    border-radius: 8px;
+
+    color: #fff;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.login-box input:focus {
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 15px rgba(140,255,0,.2);
+}
+
+.login-box button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--green);
+
+    color: #000;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.login-box button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(140,255,0,.5);
+}
+
+#error {
+
+    margin-top: 15px;
+
+    color: #ff3333;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+#dashboard {
+
+    display: none;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(120,220,0,.12),
+            transparent 40%
+        ),
+        #000;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+
+    height: 82px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(0,0,0,.88);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(140,255,0,.12);
+}
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.brand img {
+
+    width: 43px;
+    height: 43px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(140,255,0,.6));
+}
+
+.brand-text h2 {
+
+    font-size: 17px;
+
+    color: var(--green);
+
+    letter-spacing: 3px;
+}
+
+.brand-text span {
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+.logout-btn {
+
+    padding: 9px 18px;
+
+    background: transparent;
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+
+    color: #888;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.logout-btn:hover {
+
+    color: var(--green);
+
+    border-color: var(--green);
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page-section {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 70px 0;
+}
+
+.dashboard-title {
+
+    margin-bottom: 50px;
+}
+
+.dashboard-title span {
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+.dashboard-title h1 {
+
+    margin-top: 8px;
+
+    font-size: 48px;
+
+    letter-spacing: 6px;
+}
+
+.dashboard-title p {
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   GAME CARDS
 ========================= */
 
 .game-grid {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 30px;
+
     max-width: 1000px;
 }
 
 .game-card {
-    position: relative;
-    min-height: 330px;
-    border-radius: 22px;
-    overflow: hidden;
-    cursor: pointer;
 
-    border: 1px solid rgba(140, 255, 0, 0.3);
+    position: relative;
+
+    min-height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(140,255,0,.3);
 
     background:
         radial-gradient(
             circle at 80% 20%,
-            rgba(140, 255, 0, 0.18),
+            rgba(140,255,0,.17),
             transparent 35%
         ),
         linear-gradient(
             145deg,
-            #11160d,
-            #030303
+            #10150d,
+            #020202
         );
 
-    transition: 0.4s ease;
+    transition: .4s;
 
     box-shadow:
-        0 0 30px rgba(140, 255, 0, 0.06),
-        inset 0 0 50px rgba(140, 255, 0, 0.02);
-}
-
-.game-card::before {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-
-    right: -70px;
-    top: -70px;
-
-    border: 1px solid rgba(140, 255, 0, 0.15);
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 0 25px rgba(140, 255, 0, 0.02),
-        0 0 0 50px rgba(140, 255, 0, 0.015);
+        0 0 30px rgba(140,255,0,.06),
+        inset 0 0 50px rgba(140,255,0,.02);
 }
 
 .game-card:hover {
+
     transform: translateY(-8px);
 
     border-color: var(--green);
 
     box-shadow:
-        0 15px 45px rgba(140, 255, 0, 0.12),
-        0 0 25px rgba(140, 255, 0, 0.08);
+        0 20px 50px rgba(140,255,0,.13);
+}
+
+.game-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -100px;
+    top: -100px;
+
+    border: 1px solid rgba(140,255,0,.12);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 30px rgba(140,255,0,.025),
+        0 0 0 60px rgba(140,255,0,.015);
+}
+
+.game-bg-text {
+
+    position: absolute;
+
+    right: 20px;
+    bottom: -35px;
+
+    font-size: 180px;
+
+    font-weight: 900;
+
+    color: rgba(140,255,0,.025);
+
+    pointer-events: none;
 }
 
 .game-content {
+
     position: relative;
+
     z-index: 2;
 
-    height: 100%;
-
-    min-height: 330px;
+    min-height: 350px;
 
     padding: 40px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
 }
 
 .game-number {
+
     position: absolute;
 
     top: 30px;
     left: 35px;
 
+    color: var(--green);
+
     font-size: 11px;
 
     letter-spacing: 3px;
+}
+
+.game-icon {
+
+    margin-bottom: 18px;
 
     color: var(--green);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
 }
 
 .game-content h2 {
+
     font-size: 32px;
 
     letter-spacing: 4px;
@@ -101,6 +563,7 @@
 }
 
 .game-content p {
+
     color: #777;
 
     font-size: 11px;
@@ -111,9 +574,10 @@
 }
 
 .game-content button {
+
     width: fit-content;
 
-    padding: 11px 25px;
+    padding: 12px 25px;
 
     background: var(--green);
 
@@ -129,47 +593,51 @@
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .game-content button:hover {
-    box-shadow:
-        0 0 25px rgba(140, 255, 0, 0.45);
 
     transform: translateX(5px);
+
+    box-shadow:
+        0 0 25px rgba(140,255,0,.45);
 }
 
 
 /* =========================
-   BGMI COMING SOON
+   BGMI
 ========================= */
 
 .bgmi-card {
+
     cursor: default;
 
-    filter: grayscale(0.35);
+    filter: grayscale(.4);
 }
 
 .bgmi-card:hover {
+
     transform: translateY(-5px);
 }
 
 .coming-badge {
+
     width: fit-content;
 
-    padding: 10px 18px;
+    padding: 11px 18px;
 
-    border: 1px solid #555;
+    border: 1px solid #444;
 
     border-radius: 6px;
 
-    color: #999;
+    color: #888;
+
+    background: rgba(255,255,255,.02);
 
     font-size: 10px;
 
     letter-spacing: 3px;
-
-    background: rgba(255,255,255,0.02);
 }
 
 
@@ -178,10 +646,12 @@
 ========================= */
 
 .section-top {
-    margin-bottom: 35px;
+
+    margin-bottom: 30px;
 }
 
 .back-btn {
+
     padding: 10px 20px;
 
     background: transparent;
@@ -198,38 +668,375 @@
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .back-btn:hover {
+
     color: var(--green);
 
     border-color: var(--green);
-
-    box-shadow:
-        0 0 15px rgba(140, 255, 0, 0.15);
 }
 
 
 /* =========================
-   MOBILE GAME CARDS
+   TEAM CARDS
+========================= */
+
+.team-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.team-card {
+
+    height: 420px;
+
+    perspective: 1200px;
+}
+
+.card-inner {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition:
+        transform .8s cubic-bezier(
+            .175,
+            .885,
+            .32,
+            1.275
+        );
+
+    transform-style: preserve-3d;
+}
+
+.team-card.flipped .card-inner {
+
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(140,255,0,.35);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(100,170,0,.13),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #0c1009,
+            #020202
+        );
+
+    box-shadow:
+        0 0 30px rgba(140,255,0,.07),
+        inset 0 0 40px rgba(140,255,0,.025);
+}
+
+
+/* =========================
+   CARD FRONT
+========================= */
+
+.card-front {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.team-number {
+
+    position: absolute;
+
+    top: 25px;
+    left: 28px;
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.team-letter {
+
+    font-size: 190px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px var(--green);
+
+    text-shadow:
+        0 0 20px rgba(140,255,0,.5),
+        0 0 60px rgba(140,255,0,.2);
+
+    transition: .4s;
+}
+
+.team-card:hover .team-letter {
+
+    transform: scale(1.05);
+
+    text-shadow:
+        0 0 30px rgba(140,255,0,.8),
+        0 0 80px rgba(140,255,0,.35);
+}
+
+.team-letter.brutal {
+
+    font-size: 150px;
+}
+
+.team-name {
+
+    margin-top: 20px;
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   FLIP BUTTON
+========================= */
+
+.flip-btn {
+
+    margin-top: 25px;
+
+    padding: 11px 25px;
+
+    background: rgba(140,255,0,.05);
+
+    color: var(--green);
+
+    border: 1px solid var(--green);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.flip-btn:hover {
+
+    background: var(--green);
+
+    color: #000;
+
+    box-shadow:
+        0 0 20px rgba(140,255,0,.4);
+}
+
+
+/* =========================
+   CARD BACK
+========================= */
+
+.card-back {
+
+    transform: rotateY(180deg);
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.back-label {
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.card-back h2 {
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.stat-box {
+
+    padding: 16px;
+
+    background: rgba(255,255,255,.025);
+
+    border: 1px solid #202020;
+
+    border-radius: 8px;
+}
+
+.stat-box span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.stat-box strong {
+
+    color: #fff;
+
+    font-size: 17px;
+}
+
+.performance {
+
+    margin-top: 18px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.performance b {
+
+    margin-left: 8px;
+
+    color: var(--green);
+}
+
+
+/* =========================
+   MOBILE
 ========================= */
 
 @media (max-width: 800px) {
 
-    .game-grid {
+    .game-grid,
+    .team-grid {
+
         grid-template-columns: 1fr;
     }
 
-    .game-card {
-        min-height: 280px;
-    }
+    .dashboard-title h1 {
 
-    .game-content {
-        min-height: 280px;
+        font-size: 34px;
+
+        letter-spacing: 3px;
     }
 
     .game-content h2 {
+
         font-size: 26px;
+    }
+
+    .team-card {
+
+        height: 390px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .page-section {
+
+        width: 92%;
+
+        padding: 45px 0;
+    }
+
+    .dashboard-header {
+
+        padding: 0 4%;
+    }
+
+    .login-box {
+
+        padding: 35px 25px;
+    }
+
+    .team-letter {
+
+        font-size: 140px;
+    }
+
+    .team-letter.brutal {
+
+        font-size: 115px;
+    }
+
+    .card-back {
+
+        padding: 25px;
+    }
+
+    .stat-box {
+
+        padding: 12px;
     }
 }
