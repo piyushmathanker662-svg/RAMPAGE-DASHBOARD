@@ -4,15 +4,25 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #000;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+:root {
+    --green: #8cff00;
+    --dark-green: #4d8f00;
+    --black: #020202;
+    --card: #0a0d08;
+    --white: #ffffff;
+    --gray: #888;
 }
 
+body {
+    background: #000;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
 /* =========================
-   INTRO ANIMATION
+   INTRO
 ========================= */
 
 #intro {
@@ -23,162 +33,705 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    animation: introHide 1s ease forwards;
+
+    animation: introHide 0.8s ease forwards;
     animation-delay: 3s;
 }
 
 .logo-container {
     text-align: center;
-    animation: logoZoom 3s ease forwards;
+    animation: introLogo 3s ease forwards;
 }
 
 .logo-container img {
-    width: 380px;
+    width: 360px;
     max-width: 70vw;
-    filter: drop-shadow(0 0 25px #8cff00);
+
+    filter:
+        drop-shadow(0 0 15px rgba(140, 255, 0, 0.8))
+        drop-shadow(0 0 40px rgba(140, 255, 0, 0.3));
 }
 
 .logo-container h1 {
     margin-top: 20px;
-    font-size: 42px;
-    letter-spacing: 8px;
-    color: #fff;
-    text-shadow: 0 0 15px #8cff00;
+
+    font-size: 38px;
+    letter-spacing: 9px;
+
+    text-shadow:
+        0 0 10px rgba(140, 255, 0, 0.8),
+        0 0 30px rgba(140, 255, 0, 0.3);
 }
 
-/* Logo entrance */
+@keyframes introLogo {
 
-@keyframes logoZoom {
     0% {
         transform: scale(0.4);
         opacity: 0;
     }
 
-    20% {
+    25% {
         opacity: 1;
     }
 
-    70% {
-        transform: scale(1);
-    }
-
     100% {
-        transform: scale(0.9);
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
 @keyframes introHide {
+
     to {
         opacity: 0;
         visibility: hidden;
     }
 }
 
+
 /* =========================
-   LOGIN PAGE
+   LOGIN
 ========================= */
 
 #login-page {
+
     min-height: 100vh;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     background:
-        radial-gradient(circle at center, #102000 0%, #050505 35%, #000 75%);
+        radial-gradient(
+            circle at center,
+            rgba(80, 140, 0, 0.18),
+            #000 60%
+        );
 }
 
 .login-box {
-    width: 400px;
+
+    width: 410px;
     max-width: 90%;
-    padding: 45px 40px;
-    background: rgba(10, 10, 10, 0.92);
-    border: 1px solid #8cff00;
-    border-radius: 15px;
-    box-shadow:
-        0 0 20px rgba(140, 255, 0, 0.25),
-        inset 0 0 25px rgba(140, 255, 0, 0.03);
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 20, 12, 0.95),
+            rgba(2, 2, 2, 0.98)
+        );
+
+    border: 1px solid rgba(140, 255, 0, 0.5);
+
+    border-radius: 18px;
+
     text-align: center;
+
+    box-shadow:
+        0 0 40px rgba(140, 255, 0, 0.12),
+        inset 0 0 30px rgba(140, 255, 0, 0.03);
 }
 
 .login-box h2 {
-    font-size: 30px;
-    letter-spacing: 4px;
-    color: #8cff00;
-    margin-bottom: 8px;
+
+    color: var(--green);
+
+    font-size: 28px;
+
+    letter-spacing: 5px;
 }
 
 .login-box p {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #888;
+
+    margin-top: 8px;
     margin-bottom: 35px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #777;
 }
 
 .login-box input {
+
     width: 100%;
+
     padding: 15px;
+
     margin-bottom: 15px;
-    background: #080808;
-    border: 1px solid #333;
+
+    background: #050505;
+
+    border: 1px solid #292929;
+
     border-radius: 8px;
+
     color: white;
+
     outline: none;
-    font-size: 15px;
+
     transition: 0.3s;
 }
 
 .login-box input:focus {
-    border-color: #8cff00;
-    box-shadow: 0 0 10px rgba(140, 255, 0, 0.25);
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 15px rgba(140, 255, 0, 0.2);
 }
 
 .login-box button {
+
     width: 100%;
+
     padding: 15px;
-    margin-top: 10px;
-    background: #8cff00;
-    color: #000;
+
+    margin-top: 8px;
+
     border: none;
+
     border-radius: 8px;
-    font-size: 15px;
+
+    background: var(--green);
+
+    color: #000;
+
     font-weight: bold;
+
     letter-spacing: 2px;
+
     cursor: pointer;
+
     transition: 0.3s;
 }
 
 .login-box button:hover {
-    background: #aaff33;
-    box-shadow: 0 0 20px rgba(140, 255, 0, 0.5);
+
     transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(140, 255, 0, 0.5);
 }
 
 #error {
+
     margin-top: 15px;
-    color: #ff3333;
+
     font-size: 13px;
 }
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+#dashboard {
+
+    display: none;
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(120, 220, 0, 0.12),
+            transparent 40%
+        ),
+
+        #000;
+}
+
+
+/* HEADER */
+
+.dashboard-header {
+
+    height: 85px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(140, 255, 0, 0.12);
+
+    background: rgba(0, 0, 0, 0.85);
+
+    backdrop-filter: blur(10px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.brand img {
+
+    width: 42px;
+
+    height: 42px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(140, 255, 0, 0.7));
+}
+
+.brand h2 {
+
+    font-size: 17px;
+
+    letter-spacing: 3px;
+
+    color: var(--green);
+}
+
+.brand span {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+}
+
+.logout-btn {
+
+    background: transparent;
+
+    color: #888;
+
+    border: 1px solid #333;
+
+    padding: 9px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+
+    color: var(--green);
+
+    border-color: var(--green);
+}
+
+
+/* CONTENT */
+
+.dashboard-content {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 70px 0;
+}
+
+.dashboard-title {
+
+    margin-bottom: 50px;
+}
+
+.dashboard-title span {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+}
+
+.dashboard-title h1 {
+
+    margin-top: 8px;
+
+    font-size: 48px;
+
+    letter-spacing: 6px;
+}
+
+.dashboard-title p {
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   TEAM GRID
+========================= */
+
+.team-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================
+   3D CARD
+========================= */
+
+.team-card {
+
+    height: 420px;
+
+    perspective: 1200px;
+}
+
+.card-inner {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition:
+        transform 0.8s cubic-bezier(
+            0.175,
+            0.885,
+            0.32,
+            1.275
+        );
+
+    transform-style: preserve-3d;
+}
+
+.team-card.flipped .card-inner {
+
+    transform: rotateY(180deg);
+}
+
+
+/* FRONT + BACK */
+
+.card-front,
+.card-back {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(140, 255, 0, 0.35);
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(100, 170, 0, 0.13),
+            transparent 60%
+        ),
+
+        linear-gradient(
+            145deg,
+            #0c1009,
+            #020202
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(140, 255, 0, 0.07),
+
+        inset 0 0 40px
+        rgba(140, 255, 0, 0.025);
+}
+
+
+/* FRONT */
+
+.card-front {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.team-letter {
+
+    font-size: 190px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px var(--green);
+
+    text-shadow:
+
+        0 0 20px
+        rgba(140, 255, 0, 0.5),
+
+        0 0 60px
+        rgba(140, 255, 0, 0.2);
+
+    transition: 0.4s;
+}
+
+.team-card:hover .team-letter {
+
+    transform: scale(1.05);
+
+    text-shadow:
+
+        0 0 30px
+        rgba(140, 255, 0, 0.8),
+
+        0 0 80px
+        rgba(140, 255, 0, 0.35);
+}
+
+.team-letter.brutal {
+
+    font-size: 150px;
+}
+
+.team-name {
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    color: #ddd;
+
+    text-align: center;
+}
+
+
+/* FLIP BUTTON */
+
+.flip-btn {
+
+    margin-top: 25px;
+
+    padding: 11px 25px;
+
+    border-radius: 6px;
+
+    border: 1px solid var(--green);
+
+    background: rgba(140, 255, 0, 0.05);
+
+    color: var(--green);
+
+    font-weight: bold;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.flip-btn:hover {
+
+    background: var(--green);
+
+    color: #000;
+
+    box-shadow:
+        0 0 20px
+        rgba(140, 255, 0, 0.4);
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.card-back {
+
+    transform: rotateY(180deg);
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.card-back h2 {
+
+    color: var(--green);
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.stats div {
+
+    padding: 17px;
+
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid #202020;
+
+    border-radius: 8px;
+}
+
+.stats span {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+.stats strong {
+
+    color: white;
+
+    font-size: 18px;
+}
+
+.performance {
+
+    margin-top: 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.performance b {
+
+    color: var(--green);
+
+    margin-left: 10px;
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-    .logo-container img {
-        width: 280px;
+    .team-grid {
+
+        grid-template-columns: 1fr;
     }
 
-    .logo-container h1 {
-        font-size: 25px;
-        letter-spacing: 4px;
+    .dashboard-title h1 {
+
+        font-size: 35px;
     }
 
-    .login-box {
-        padding: 35px 25px;
+    .team-card {
+
+        height: 390px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .dashboard-content {
+
+        width: 92%;
+
+        padding: 45px 0;
     }
 
-    .login-box h2 {
-        font-size: 24px;
+    .dashboard-title h1 {
+
+        font-size: 30px;
+
+        letter-spacing: 3px;
+    }
+
+    .team-letter {
+
+        font-size: 140px;
+    }
+
+    .team-letter.brutal {
+
+        font-size: 115px;
+    }
+
+    .card-back {
+
+        padding: 25px;
+    }
+
+    .stats {
+
+        gap: 8px;
+    }
+
+    .stats div {
+
+        padding: 12px;
     }
 }
