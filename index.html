@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Rampage Esports</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Rampage Intro -->
+    <!-- INTRO -->
     <div id="intro">
         <div class="logo-container">
             <img src="logo.png" alt="Rampage Esports Logo">
@@ -17,20 +19,385 @@
         </div>
     </div>
 
-    <!-- Login Screen -->
+
+    <!-- LOGIN -->
     <main id="login-page">
+
         <div class="login-box">
+
             <h2>RAMPAGE ESPORTS</h2>
+
             <p>PRIVATE MANAGEMENT PORTAL</p>
 
-            <input type="text" id="teamId" placeholder="Team ID">
-            <input type="password" id="password" placeholder="Password">
+            <input
+                type="text"
+                id="teamId"
+                placeholder="Team ID"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
 
             <button onclick="login()">LOGIN</button>
 
             <div id="error"></div>
+
         </div>
+
     </main>
+
+
+    <!-- DASHBOARD -->
+    <main id="dashboard">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div class="brand">
+
+                <img src="logo.png" alt="Rampage Logo">
+
+                <div>
+                    <h2>RAMPAGE</h2>
+                    <span>ESPORTS</span>
+                </div>
+
+            </div>
+
+            <button class="logout-btn" onclick="logout()">
+                LOGOUT
+            </button>
+
+        </header>
+
+
+        <!-- DASHBOARD CONTENT -->
+
+        <section class="dashboard-content">
+
+            <div class="dashboard-title">
+
+                <span>FREE FIRE MAX</span>
+
+                <h1>LINEUPS</h1>
+
+                <p>
+                    RAMPAGE ESPORTS OFFICIAL LINEUPS
+                </p>
+
+            </div>
+
+
+            <!-- TEAM CARDS -->
+
+            <div class="team-grid">
+
+
+                <!-- X -->
+
+                <div class="team-card">
+
+                    <div class="card-inner">
+
+                        <!-- FRONT -->
+
+                        <div class="card-front">
+
+                            <div class="team-letter">
+                                X
+                            </div>
+
+                            <div class="team-name">
+                                RAMPAGE ESPORTS X
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↻ VIEW
+                            </button>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="card-back">
+
+                            <h2>RAMPAGE X</h2>
+
+                            <div class="stats">
+
+                                <div>
+                                    <span>PLAYERS</span>
+                                    <strong>4</strong>
+                                </div>
+
+                                <div>
+                                    <span>INVESTMENT</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>PRIZE POOL</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>TEAM EARNING</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="performance">
+                                PERFORMANCE
+                                <b>GOOD</b>
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↩ BACK
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Y -->
+
+                <div class="team-card">
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+
+                            <div class="team-letter">
+                                Y
+                            </div>
+
+                            <div class="team-name">
+                                RAMPAGE ESPORTS Y
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↻ VIEW
+                            </button>
+
+                        </div>
+
+
+                        <div class="card-back">
+
+                            <h2>RAMPAGE Y</h2>
+
+                            <div class="stats">
+
+                                <div>
+                                    <span>PLAYERS</span>
+                                    <strong>4</strong>
+                                </div>
+
+                                <div>
+                                    <span>INVESTMENT</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>PRIZE POOL</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>TEAM EARNING</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="performance">
+                                PERFORMANCE
+                                <b>GOOD</b>
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↩ BACK
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Z -->
+
+                <div class="team-card">
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+
+                            <div class="team-letter">
+                                Z
+                            </div>
+
+                            <div class="team-name">
+                                RAMPAGE ESPORTS Z
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↻ VIEW
+                            </button>
+
+                        </div>
+
+
+                        <div class="card-back">
+
+                            <h2>RAMPAGE Z</h2>
+
+                            <div class="stats">
+
+                                <div>
+                                    <span>PLAYERS</span>
+                                    <strong>4</strong>
+                                </div>
+
+                                <div>
+                                    <span>INVESTMENT</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>PRIZE POOL</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>TEAM EARNING</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="performance">
+                                PERFORMANCE
+                                <b>GOOD</b>
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↩ BACK
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BRUTAL -->
+
+                <div class="team-card">
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+
+                            <div class="team-letter brutal">
+                                B
+                            </div>
+
+                            <div class="team-name">
+                                RAMPAGE BRUTAL
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↻ VIEW
+                            </button>
+
+                        </div>
+
+
+                        <div class="card-back">
+
+                            <h2>RAMPAGE BRUTAL</h2>
+
+                            <div class="stats">
+
+                                <div>
+                                    <span>PLAYERS</span>
+                                    <strong>4</strong>
+                                </div>
+
+                                <div>
+                                    <span>INVESTMENT</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>PRIZE POOL</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>TEAM EARNING</span>
+                                    <strong>₹0</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="performance">
+                                PERFORMANCE
+                                <b>GOOD</b>
+                            </div>
+
+                            <button
+                                class="flip-btn"
+                                onclick="flipCard(this)"
+                            >
+                                ↩ BACK
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
 
     <script src="script.js"></script>
 
