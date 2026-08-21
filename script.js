@@ -17,8 +17,8 @@ function login() {
     // TEMPORARY DEMO LOGIN
 
     if (
-        teamId === "RAMPAGE" &&
-        password === "1234"
+        teamId === "RAMPAGE_OFFICER" &&
+        password === "Rampage@2025"
     ) {
 
         error.textContent = "";
