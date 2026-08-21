@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rampage Esports</title>
+    <title>RAMPAGE ESPORTS</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- INTRO -->
+    <!-- =========================
+         INTRO
+    ========================== -->
+
     <div id="intro">
+
         <div class="logo-container">
-            <img src="logo.png" alt="Rampage Esports Logo">
+
+            <img src="logo.png" alt="Rampage Esports">
+
             <h1>RAMPAGE ESPORTS</h1>
+
         </div>
+
     </div>
 
 
-    <!-- LOGIN -->
+    <!-- =========================
+         LOGIN
+    ========================== -->
+
     <main id="login-page">
 
         <div class="login-box">
@@ -32,16 +44,18 @@
             <input
                 type="text"
                 id="teamId"
-                placeholder="Team ID"
+                placeholder="TEAM ID"
             >
 
             <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder="PASSWORD"
             >
 
-            <button onclick="login()">LOGIN</button>
+            <button onclick="login()">
+                LOGIN
+            </button>
 
             <div id="error"></div>
 
@@ -50,7 +64,10 @@
     </main>
 
 
-    <!-- DASHBOARD -->
+    <!-- =========================
+         MAIN DASHBOARD
+    ========================== -->
+
     <main id="dashboard">
 
         <!-- HEADER -->
@@ -59,34 +76,151 @@
 
             <div class="brand">
 
-                <img src="logo.png" alt="Rampage Logo">
+                <img
+                    src="logo.png"
+                    alt="Rampage Logo"
+                >
 
                 <div>
+
                     <h2>RAMPAGE</h2>
+
                     <span>ESPORTS</span>
+
                 </div>
 
             </div>
 
-            <button class="logout-btn" onclick="logout()">
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
                 LOGOUT
             </button>
 
         </header>
 
 
-        <!-- DASHBOARD CONTENT -->
+        <!-- DASHBOARD HOME -->
 
-        <section class="dashboard-content">
+        <section
+            id="home-section"
+            class="page-section"
+        >
 
             <div class="dashboard-title">
 
-                <span>FREE FIRE MAX</span>
+                <span>WELCOME TO</span>
 
-                <h1>LINEUPS</h1>
+                <h1>RAMPAGE DASHBOARD</h1>
 
                 <p>
-                    RAMPAGE ESPORTS OFFICIAL LINEUPS
+                    OFFICIAL ESPORTS MANAGEMENT PORTAL
+                </p>
+
+            </div>
+
+
+            <!-- GAME OPTIONS -->
+
+            <div class="game-grid">
+
+
+                <!-- FREE FIRE MAX -->
+
+                <div
+                    class="game-card freefire-card"
+                    onclick="openFreeFire()"
+                >
+
+                    <div class="game-content">
+
+                        <span class="game-number">
+                            01
+                        </span>
+
+                        <h2>
+                            FREE FIRE MAX
+                        </h2>
+
+                        <p>
+                            OFFICIAL LINEUPS
+                        </p>
+
+                        <button>
+                            ENTER →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BGMI -->
+
+                <div
+                    class="game-card bgmi-card coming-soon"
+                >
+
+                    <div class="game-content">
+
+                        <span class="game-number">
+                            02
+                        </span>
+
+                        <h2>
+                            BGMI
+                        </h2>
+
+                        <p>
+                            LINEUPS
+                        </p>
+
+                        <div class="coming-badge">
+                            COMING SOON
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FREE FIRE MAX LINEUPS
+        ========================== -->
+
+        <section
+            id="freefire-section"
+            class="page-section"
+            style="display: none;"
+        >
+
+            <div class="section-top">
+
+                <button
+                    class="back-btn"
+                    onclick="goHome()"
+                >
+                    ← BACK
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-title">
+
+                <span>RAMPAGE ESPORTS</span>
+
+                <h1>FREE FIRE MAX</h1>
+
+                <p>
+                    OFFICIAL LINEUPS
                 </p>
 
             </div>
@@ -97,11 +231,12 @@
             <div class="team-grid">
 
 
-                <!-- X -->
+                <!-- ================= X ================= -->
 
                 <div class="team-card">
 
                     <div class="card-inner">
+
 
                         <!-- FRONT -->
 
@@ -129,7 +264,9 @@
 
                         <div class="card-back">
 
-                            <h2>RAMPAGE X</h2>
+                            <h2>
+                                RAMPAGE ESPORTS X
+                            </h2>
 
                             <div class="stats">
 
@@ -156,8 +293,13 @@
                             </div>
 
                             <div class="performance">
+
                                 PERFORMANCE
-                                <b>GOOD</b>
+
+                                <b>
+                                    GOOD
+                                </b>
+
                             </div>
 
                             <button
@@ -174,7 +316,7 @@
                 </div>
 
 
-                <!-- Y -->
+                <!-- ================= Y ================= -->
 
                 <div class="team-card">
 
@@ -202,7 +344,9 @@
 
                         <div class="card-back">
 
-                            <h2>RAMPAGE Y</h2>
+                            <h2>
+                                RAMPAGE ESPORTS Y
+                            </h2>
 
                             <div class="stats">
 
@@ -229,8 +373,13 @@
                             </div>
 
                             <div class="performance">
+
                                 PERFORMANCE
-                                <b>GOOD</b>
+
+                                <b>
+                                    GOOD
+                                </b>
+
                             </div>
 
                             <button
@@ -247,7 +396,7 @@
                 </div>
 
 
-                <!-- Z -->
+                <!-- ================= Z ================= -->
 
                 <div class="team-card">
 
@@ -275,7 +424,9 @@
 
                         <div class="card-back">
 
-                            <h2>RAMPAGE Z</h2>
+                            <h2>
+                                RAMPAGE ESPORTS Z
+                            </h2>
 
                             <div class="stats">
 
@@ -302,8 +453,13 @@
                             </div>
 
                             <div class="performance">
+
                                 PERFORMANCE
-                                <b>GOOD</b>
+
+                                <b>
+                                    GOOD
+                                </b>
+
                             </div>
 
                             <button
@@ -320,7 +476,7 @@
                 </div>
 
 
-                <!-- BRUTAL -->
+                <!-- ================= BRUTAL ================= -->
 
                 <div class="team-card">
 
@@ -348,7 +504,9 @@
 
                         <div class="card-back">
 
-                            <h2>RAMPAGE BRUTAL</h2>
+                            <h2>
+                                RAMPAGE BRUTAL
+                            </h2>
 
                             <div class="stats">
 
@@ -375,8 +533,13 @@
                             </div>
 
                             <div class="performance">
+
                                 PERFORMANCE
-                                <b>GOOD</b>
+
+                                <b>
+                                    GOOD
+                                </b>
+
                             </div>
 
                             <button
@@ -392,6 +555,7 @@
 
                 </div>
 
+
             </div>
 
         </section>
@@ -399,7 +563,10 @@
     </main>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
