@@ -20,7 +20,7 @@
 
         <div class="logo-container">
 
-            <img src="logo.png" alt="Rampage Esports">
+            <img src="logo.png" alt="Rampage Esports Logo">
 
             <h1>RAMPAGE ESPORTS</h1>
 
@@ -37,6 +37,10 @@
 
         <div class="login-box">
 
+            <div class="login-logo">
+                <img src="logo.png" alt="Rampage Logo">
+            </div>
+
             <h2>RAMPAGE ESPORTS</h2>
 
             <p>PRIVATE MANAGEMENT PORTAL</p>
@@ -45,12 +49,14 @@
                 type="text"
                 id="teamId"
                 placeholder="TEAM ID"
+                autocomplete="username"
             >
 
             <input
                 type="password"
                 id="password"
                 placeholder="PASSWORD"
+                autocomplete="current-password"
             >
 
             <button onclick="login()">
@@ -65,7 +71,7 @@
 
 
     <!-- =========================
-         MAIN DASHBOARD
+         DASHBOARD
     ========================== -->
 
     <main id="dashboard">
@@ -76,12 +82,9 @@
 
             <div class="brand">
 
-                <img
-                    src="logo.png"
-                    alt="Rampage Logo"
-                >
+                <img src="logo.png" alt="Rampage Logo">
 
-                <div>
+                <div class="brand-text">
 
                     <h2>RAMPAGE</h2>
 
@@ -90,7 +93,6 @@
                 </div>
 
             </div>
-
 
             <button
                 class="logout-btn"
@@ -102,7 +104,9 @@
         </header>
 
 
-        <!-- DASHBOARD HOME -->
+        <!-- =========================
+             HOME
+        ========================== -->
 
         <section
             id="home-section"
@@ -134,11 +138,19 @@
                     onclick="openFreeFire()"
                 >
 
+                    <div class="game-bg-text">
+                        FF
+                    </div>
+
                     <div class="game-content">
 
                         <span class="game-number">
                             01
                         </span>
+
+                        <div class="game-icon">
+                            FREE FIRE MAX
+                        </div>
 
                         <h2>
                             FREE FIRE MAX
@@ -163,18 +175,26 @@
                     class="game-card bgmi-card coming-soon"
                 >
 
+                    <div class="game-bg-text">
+                        BG
+                    </div>
+
                     <div class="game-content">
 
                         <span class="game-number">
                             02
                         </span>
 
+                        <div class="game-icon">
+                            BGMI
+                        </div>
+
                         <h2>
                             BGMI
                         </h2>
 
                         <p>
-                            LINEUPS
+                            OFFICIAL LINEUPS
                         </p>
 
                         <div class="coming-badge">
@@ -185,14 +205,13 @@
 
                 </div>
 
-
             </div>
 
         </section>
 
 
         <!-- =========================
-             FREE FIRE MAX LINEUPS
+             FREE FIRE MAX
         ========================== -->
 
         <section
@@ -226,21 +245,24 @@
             </div>
 
 
-            <!-- TEAM CARDS -->
+            <!-- TEAM GRID -->
 
             <div class="team-grid">
 
 
-                <!-- ================= X ================= -->
+                <!-- =========================
+                     RAMPAGE X
+                ========================== -->
 
                 <div class="team-card">
 
                     <div class="card-inner">
 
-
-                        <!-- FRONT -->
-
                         <div class="card-front">
+
+                            <div class="team-number">
+                                01
+                            </div>
 
                             <div class="team-letter">
                                 X
@@ -260,9 +282,11 @@
                         </div>
 
 
-                        <!-- BACK -->
-
                         <div class="card-back">
+
+                            <span class="back-label">
+                                TEAM DETAILS
+                            </span>
 
                             <h2>
                                 RAMPAGE ESPORTS X
@@ -270,24 +294,44 @@
 
                             <div class="stats">
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PLAYERS</span>
-                                    <strong>4</strong>
+
+                                    <strong>
+                                        4
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>INVESTMENT</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PRIZE POOL</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>TEAM EARNING</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
                             </div>
@@ -316,13 +360,19 @@
                 </div>
 
 
-                <!-- ================= Y ================= -->
+                <!-- =========================
+                     RAMPAGE Y
+                ========================== -->
 
                 <div class="team-card">
 
                     <div class="card-inner">
 
                         <div class="card-front">
+
+                            <div class="team-number">
+                                02
+                            </div>
 
                             <div class="team-letter">
                                 Y
@@ -344,30 +394,54 @@
 
                         <div class="card-back">
 
+                            <span class="back-label">
+                                TEAM DETAILS
+                            </span>
+
                             <h2>
                                 RAMPAGE ESPORTS Y
                             </h2>
 
                             <div class="stats">
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PLAYERS</span>
-                                    <strong>4</strong>
+
+                                    <strong>
+                                        4
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>INVESTMENT</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PRIZE POOL</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>TEAM EARNING</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
                             </div>
@@ -396,13 +470,19 @@
                 </div>
 
 
-                <!-- ================= Z ================= -->
+                <!-- =========================
+                     RAMPAGE Z
+                ========================== -->
 
                 <div class="team-card">
 
                     <div class="card-inner">
 
                         <div class="card-front">
+
+                            <div class="team-number">
+                                03
+                            </div>
 
                             <div class="team-letter">
                                 Z
@@ -424,30 +504,54 @@
 
                         <div class="card-back">
 
+                            <span class="back-label">
+                                TEAM DETAILS
+                            </span>
+
                             <h2>
                                 RAMPAGE ESPORTS Z
                             </h2>
 
                             <div class="stats">
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PLAYERS</span>
-                                    <strong>4</strong>
+
+                                    <strong>
+                                        4
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>INVESTMENT</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PRIZE POOL</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>TEAM EARNING</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
                             </div>
@@ -476,13 +580,19 @@
                 </div>
 
 
-                <!-- ================= BRUTAL ================= -->
+                <!-- =========================
+                     RAMPAGE BRUTAL
+                ========================== -->
 
                 <div class="team-card">
 
                     <div class="card-inner">
 
                         <div class="card-front">
+
+                            <div class="team-number">
+                                04
+                            </div>
 
                             <div class="team-letter brutal">
                                 B
@@ -504,30 +614,54 @@
 
                         <div class="card-back">
 
+                            <span class="back-label">
+                                TEAM DETAILS
+                            </span>
+
                             <h2>
                                 RAMPAGE BRUTAL
                             </h2>
 
                             <div class="stats">
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PLAYERS</span>
-                                    <strong>4</strong>
+
+                                    <strong>
+                                        4
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>INVESTMENT</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>PRIZE POOL</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
-                                <div>
+                                <div class="stat-box">
+
                                     <span>TEAM EARNING</span>
-                                    <strong>₹0</strong>
+
+                                    <strong>
+                                        ₹0
+                                    </strong>
+
                                 </div>
 
                             </div>
@@ -555,15 +689,12 @@
 
                 </div>
 
-
             </div>
 
         </section>
 
     </main>
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
