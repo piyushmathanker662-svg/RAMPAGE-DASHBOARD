@@ -1,737 +1,128 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// ===============================
+// LOGIN
+// ===============================
 
-:root {
-    --green: #8cff00;
-    --dark-green: #4d8f00;
-    --black: #020202;
-    --card: #0a0d08;
-    --white: #ffffff;
-    --gray: #888;
-}
+function login() {
 
-body {
-    background: #000;
-    color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-}
+    const teamId = document.getElementById("teamId").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const error = document.getElementById("error");
 
+    // Temporary demo login
+    if (teamId === "RAMPAGE" && password === "1234") {
 
-/* =========================
-   INTRO
-========================= */
+        error.textContent = "";
 
-#intro {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
 
-    animation: introHide 0.8s ease forwards;
-    animation-delay: 3s;
-}
+        document.getElementById("home-section").style.display = "block";
+        document.getElementById("freefire-section").style.display = "none";
 
-.logo-container {
-    text-align: center;
-    animation: introLogo 3s ease forwards;
-}
+        document.body.style.overflow = "auto";
 
-.logo-container img {
-    width: 360px;
-    max-width: 70vw;
+    } else {
 
-    filter:
-        drop-shadow(0 0 15px rgba(140, 255, 0, 0.8))
-        drop-shadow(0 0 40px rgba(140, 255, 0, 0.3));
-}
+        error.style.color = "#ff3333";
+        error.textContent = "Invalid Team ID or Password.";
 
-.logo-container h1 {
-    margin-top: 20px;
-
-    font-size: 38px;
-    letter-spacing: 9px;
-
-    text-shadow:
-        0 0 10px rgba(140, 255, 0, 0.8),
-        0 0 30px rgba(140, 255, 0, 0.3);
-}
-
-@keyframes introLogo {
-
-    0% {
-        transform: scale(0.4);
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes introHide {
-
-    to {
-        opacity: 0;
-        visibility: hidden;
     }
 }
 
 
-/* =========================
-   LOGIN
-========================= */
+// ===============================
+// OPEN FREE FIRE MAX
+// ===============================
 
-#login-page {
+function openFreeFire() {
 
-    min-height: 100vh;
+    document.getElementById("home-section").style.display = "none";
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    document.getElementById("freefire-section").style.display = "block";
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(80, 140, 0, 0.18),
-            #000 60%
-        );
-}
-
-.login-box {
-
-    width: 410px;
-    max-width: 90%;
-
-    padding: 45px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15, 20, 12, 0.95),
-            rgba(2, 2, 2, 0.98)
-        );
-
-    border: 1px solid rgba(140, 255, 0, 0.5);
-
-    border-radius: 18px;
-
-    text-align: center;
-
-    box-shadow:
-        0 0 40px rgba(140, 255, 0, 0.12),
-        inset 0 0 30px rgba(140, 255, 0, 0.03);
-}
-
-.login-box h2 {
-
-    color: var(--green);
-
-    font-size: 28px;
-
-    letter-spacing: 5px;
-}
-
-.login-box p {
-
-    margin-top: 8px;
-    margin-bottom: 35px;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-    color: #777;
-}
-
-.login-box input {
-
-    width: 100%;
-
-    padding: 15px;
-
-    margin-bottom: 15px;
-
-    background: #050505;
-
-    border: 1px solid #292929;
-
-    border-radius: 8px;
-
-    color: white;
-
-    outline: none;
-
-    transition: 0.3s;
-}
-
-.login-box input:focus {
-
-    border-color: var(--green);
-
-    box-shadow:
-        0 0 15px rgba(140, 255, 0, 0.2);
-}
-
-.login-box button {
-
-    width: 100%;
-
-    padding: 15px;
-
-    margin-top: 8px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: var(--green);
-
-    color: #000;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.login-box button:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 0 25px rgba(140, 255, 0, 0.5);
-}
-
-#error {
-
-    margin-top: 15px;
-
-    font-size: 13px;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* =========================
-   DASHBOARD
-========================= */
+// ===============================
+// BACK TO DASHBOARD
+// ===============================
 
-#dashboard {
+function goHome() {
 
-    display: none;
+    document.getElementById("freefire-section").style.display = "none";
 
-    min-height: 100vh;
+    document.getElementById("home-section").style.display = "block";
 
-    background:
-
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(120, 220, 0, 0.12),
-            transparent 40%
-        ),
-
-        #000;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* HEADER */
+// ===============================
+// FLIP TEAM CARD
+// ===============================
 
-.dashboard-header {
+function flipCard(button) {
 
-    height: 85px;
+    const card = button.closest(".team-card");
 
-    padding: 0 6%;
+    card.classList.toggle("flipped");
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    border-bottom: 1px solid rgba(140, 255, 0, 0.12);
-
-    background: rgba(0, 0, 0, 0.85);
-
-    backdrop-filter: blur(10px);
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 100;
-}
-
-.brand {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.brand img {
-
-    width: 42px;
-
-    height: 42px;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(0 0 8px rgba(140, 255, 0, 0.7));
-}
-
-.brand h2 {
-
-    font-size: 17px;
-
-    letter-spacing: 3px;
-
-    color: var(--green);
-}
-
-.brand span {
-
-    font-size: 8px;
-
-    letter-spacing: 4px;
-
-    color: #777;
-}
-
-.logout-btn {
-
-    background: transparent;
-
-    color: #888;
-
-    border: 1px solid #333;
-
-    padding: 9px 18px;
-
-    border-radius: 6px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.logout-btn:hover {
-
-    color: var(--green);
-
-    border-color: var(--green);
 }
 
 
-/* CONTENT */
+// ===============================
+// LOGOUT
+// ===============================
 
-.dashboard-content {
+function logout() {
 
-    width: 90%;
+    document.getElementById("dashboard").style.display = "none";
 
-    max-width: 1250px;
+    document.getElementById("login-page").style.display = "flex";
 
-    margin: auto;
+    document.getElementById("home-section").style.display = "block";
 
-    padding: 70px 0;
-}
+    document.getElementById("freefire-section").style.display = "none";
 
-.dashboard-title {
+    document.getElementById("teamId").value = "";
 
-    margin-bottom: 50px;
-}
+    document.getElementById("password").value = "";
 
-.dashboard-title span {
+    document.getElementById("error").textContent = "";
 
-    color: var(--green);
+    window.scrollTo(0, 0);
 
-    font-size: 12px;
-
-    letter-spacing: 4px;
-}
-
-.dashboard-title h1 {
-
-    margin-top: 8px;
-
-    font-size: 48px;
-
-    letter-spacing: 6px;
-}
-
-.dashboard-title p {
-
-    margin-top: 10px;
-
-    color: #666;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
+    document.body.style.overflow = "hidden";
 }
 
 
-/* =========================
-   TEAM GRID
-========================= */
+// ===============================
+// ENTER KEY LOGIN
+// ===============================
 
-.team-grid {
+document.addEventListener("keydown", function(event) {
 
-    display: grid;
+    if (event.key === "Enter") {
 
-    grid-template-columns:
-        repeat(2, 1fr);
+        const loginPage =
+            document.getElementById("login-page");
 
-    gap: 30px;
-}
+        if (
+            loginPage &&
+            loginPage.style.display !== "none"
+        ) {
 
+            login();
 
-/* =========================
-   3D CARD
-========================= */
+        }
 
-.team-card {
-
-    height: 420px;
-
-    perspective: 1200px;
-}
-
-.card-inner {
-
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    transition:
-        transform 0.8s cubic-bezier(
-            0.175,
-            0.885,
-            0.32,
-            1.275
-        );
-
-    transform-style: preserve-3d;
-}
-
-.team-card.flipped .card-inner {
-
-    transform: rotateY(180deg);
-}
-
-
-/* FRONT + BACK */
-
-.card-front,
-.card-back {
-
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    backface-visibility: hidden;
-
-    border-radius: 20px;
-
-    border: 1px solid rgba(140, 255, 0, 0.35);
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(100, 170, 0, 0.13),
-            transparent 60%
-        ),
-
-        linear-gradient(
-            145deg,
-            #0c1009,
-            #020202
-        );
-
-    box-shadow:
-
-        0 0 30px
-        rgba(140, 255, 0, 0.07),
-
-        inset 0 0 40px
-        rgba(140, 255, 0, 0.025);
-}
-
-
-/* FRONT */
-
-.card-front {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.team-letter {
-
-    font-size: 190px;
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    color: transparent;
-
-    -webkit-text-stroke:
-        2px var(--green);
-
-    text-shadow:
-
-        0 0 20px
-        rgba(140, 255, 0, 0.5),
-
-        0 0 60px
-        rgba(140, 255, 0, 0.2);
-
-    transition: 0.4s;
-}
-
-.team-card:hover .team-letter {
-
-    transform: scale(1.05);
-
-    text-shadow:
-
-        0 0 30px
-        rgba(140, 255, 0, 0.8),
-
-        0 0 80px
-        rgba(140, 255, 0, 0.35);
-}
-
-.team-letter.brutal {
-
-    font-size: 150px;
-}
-
-.team-name {
-
-    margin-top: 20px;
-
-    font-size: 14px;
-
-    letter-spacing: 4px;
-
-    color: #ddd;
-
-    text-align: center;
-}
-
-
-/* FLIP BUTTON */
-
-.flip-btn {
-
-    margin-top: 25px;
-
-    padding: 11px 25px;
-
-    border-radius: 6px;
-
-    border: 1px solid var(--green);
-
-    background: rgba(140, 255, 0, 0.05);
-
-    color: var(--green);
-
-    font-weight: bold;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.flip-btn:hover {
-
-    background: var(--green);
-
-    color: #000;
-
-    box-shadow:
-        0 0 20px
-        rgba(140, 255, 0, 0.4);
-}
-
-
-/* =========================
-   BACK
-========================= */
-
-.card-back {
-
-    transform: rotateY(180deg);
-
-    padding: 35px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-.card-back h2 {
-
-    color: var(--green);
-
-    letter-spacing: 3px;
-
-    margin-bottom: 25px;
-}
-
-.stats {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-.stats div {
-
-    padding: 17px;
-
-    background: rgba(255,255,255,0.025);
-
-    border: 1px solid #202020;
-
-    border-radius: 8px;
-}
-
-.stats span {
-
-    display: block;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    color: #777;
-
-    margin-bottom: 8px;
-}
-
-.stats strong {
-
-    color: white;
-
-    font-size: 18px;
-}
-
-.performance {
-
-    margin-top: 20px;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    color: #777;
-}
-
-.performance b {
-
-    color: var(--green);
-
-    margin-left: 10px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .team-grid {
-
-        grid-template-columns: 1fr;
     }
 
-    .dashboard-title h1 {
-
-        font-size: 35px;
-    }
-
-    .team-card {
-
-        height: 390px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .dashboard-content {
-
-        width: 92%;
-
-        padding: 45px 0;
-    }
-
-    .dashboard-title h1 {
-
-        font-size: 30px;
-
-        letter-spacing: 3px;
-    }
-
-    .team-letter {
-
-        font-size: 140px;
-    }
-
-    .team-letter.brutal {
-
-        font-size: 115px;
-    }
-
-    .card-back {
-
-        padding: 25px;
-    }
-
-    .stats {
-
-        gap: 8px;
-    }
-
-    .stats div {
-
-        padding: 12px;
-    }
-}
+});
